@@ -1,31 +1,60 @@
-/**
- * Body
- */
+/* Positioning */
+/* Display & Box Model */
+/* Text */
+/* Color */
+
+
+/* Body */
 body {
-    /* Display & Box Model */
     height: 100%;
     width: 100%;
 }
 
 
-
-/**
- * Navbar
- */
+/* Navbar */
 .navbar {
-    /* Positioning */
-
-    /* Display & Box Model */
     min-height: 0;
     padding: 0.3em;
 
-    /* Text */
+
     font-size: 1.8em;
     font-family: 'Lato', sans-serif;
     text-align: center;
 
-    /* Color */
+
     color: white;
     background-color: #455a64;
+}
 
+
+/* Search Bar */
+.search-container {
+    margin-top: 5em;
+
+    width: 100%;
+    padding: 0.3em;
+
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.search-container .fa-search {
+    position: absolute;
+
+    padding: 6px 8px;
+
+    opacity: 0.3;
+
+    pointer-events: none;
+}
+.search-container .searchBar {
+    width: 40%;
+    border: solid 1px #e2e2e2;
+    border-radius: 0.3em;
+
+    text-indent: 2em;
+}
+
+.search-container .searchBar:focus {
+    outline: 0;
 }
