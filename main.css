@@ -33,8 +33,6 @@ body {
 
 /* Search Bar */
 .search-container {
-    margin-top: 5em;
-
     width: 100%;
     padding: 0.3em;
 
@@ -45,7 +43,7 @@ body {
 .search-container .fa-search {
     position: absolute;
 
-    padding: 6px 8px;
+    padding: 8.5px 9px;
 
     opacity: 0.3;
 
@@ -53,6 +51,7 @@ body {
 }
 .search-container .searchBar {
     width: 40%;
+    height: 2em;
     border: solid 1px #e2e2e2;
     border-radius: 0.3em;
 
