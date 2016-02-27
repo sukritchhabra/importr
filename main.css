@@ -16,14 +16,18 @@ body {
     min-height: 0;
     padding: 0.3em;
 
-
     font-size: 1.8em;
     font-family: 'Lato', sans-serif;
-    text-align: center;
-
 
     color: white;
     background-color: #455a64;
+}
+
+/* Logo */
+.logo {
+    margin-top: 5em;
+    font-size: 2em;
+    text-align: center;
 }
 
 
