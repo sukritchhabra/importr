@@ -1,0 +1,31 @@
+/**
+ * Body
+ */
+body {
+    /* Display & Box Model */
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/**
+ * Navbar
+ */
+.navbar {
+    /* Positioning */
+
+    /* Display & Box Model */
+    min-height: 0;
+    padding: 0.3em;
+
+    /* Text */
+    font-size: 1.8em;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+
+    /* Color */
+    color: white;
+    background-color: #455a64;
+
+}
