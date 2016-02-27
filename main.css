@@ -73,7 +73,7 @@
 
     display: none;
     width: 100%;
-    padding-left: 1.5em;
+    padding-left: 0em;
 
     text-align: left;
 
@@ -97,5 +97,5 @@
 }
 
 .results .selected {
-    background-color: #e2e2e2;
+    background-color: #f2f2f2;
 }

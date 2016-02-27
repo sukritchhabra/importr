@@ -35,7 +35,7 @@ $(document).ready(function() {
                 var len = searchResult_JSON.length;     // Number of search results acquired
 
                 $('.results').addClass('active');
-                for (var i = 0; i < len-1; i++) {
+                for (var i = 0; i < len; i++) {
                     var temp = searchResult_JSON[i].title;
                     temp = searchResult_JSON[i].title.toLowerCase();
                     var tempSearchText = searchText.toLowerCase();
@@ -93,6 +93,10 @@ $(document).ready(function() {
             var searchEvent = $.Event("search");
             searchEvent.searchString = selectedSearchString;    // Adding key searchString to search event
             $('body').trigger(searchEvent);
+        } else if (keyPressed == 27) {
+            $('.searchBar').val("");
+            $('.results').removeClass('active');
+            $('.results').empty();
         }
     });
 
