@@ -6,7 +6,7 @@
  * Year: 2016
  */
 $(document).ready(function() {
-    var searchResult_JSON;      // Search results recieved from ajax request and used to create the search result list
+    var searchResult_JSON = listOfLibs;      // Search results recieved from ajax request and used to create the search result list
     var debounceTimeout = 200;  // Global timeout for debouce.
     var searchText = "";        // Search string the user typed
     var keyupCounter = 0;       // Counter to set debounce timeout
@@ -31,21 +31,6 @@ $(document).ready(function() {
             searchText = $('.searchBar').val();
 
             if (searchText != "") {
-                var searchTextForQuery = searchText.replace(' ', '+');
-                /* Getting search result for the current search string in the search bar */
-                $.ajax({
-                    url: "http://rack36.cs.drexel.edu/suggest/?q=" + searchTextForQuery,
-                    type: "GET",
-                    async: false,
-                    success: function (response) {
-                        searchResult_JSON = JSON.parse(response);
-                        console.log('recieved json:');
-                        console.log(searchResult_JSON);
-                    },
-                    error: function (errorReport) {
-                        console.log('Error happened in AJAX Request!!');
-                    }
-                });
 
                 var len = searchResult_JSON.length;     // Number of search results acquired
 
