@@ -1,0 +1,22 @@
+.search-container {
+    width: 40%;
+    padding: 1em 0em;
+    font-size: 1.2em;
+    position: relative;
+}
+.search-container .fa-search {
+    opacity: 0.3;
+    position: absolute;
+    padding: 6px 8px;
+    pointer-events: none;
+}
+.search-container .search-bar {
+    text-indent: 2em;
+    width: 20em;
+    border-radius: 0.3em;
+    border: none;
+    background-color: #EAEAEA;
+}
+.search-container .search-bar:focus {
+    outline: 0;
+}
