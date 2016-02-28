@@ -26,6 +26,11 @@ $(document).ready(function() {
         return info;
     }
 
+    /**
+     * A function to get the README of a library
+     * @param  {[String]} readmeLink    [ Link to the README of the library ]
+     * @return {[string]}               [ The README that was recievec ]
+     */
     function getReadme(readmeLink) {
         var readme;
         $.ajax({
@@ -50,6 +55,10 @@ $(document).ready(function() {
 
         var libraryInfo = getLibraryInfo(searchedLibrary);
         var libReadme = getReadme(libraryInfo.readme);
+
+        var converter = new showdown.Converter();
+        var readmeAsHTML = converter.makeHtml(libReadme);
+        $('.readme').html(readmeAsHTML);
 
     });
 })
