@@ -146,6 +146,14 @@ $(document).ready(function() {
         $('.importrLinks .cdnLinks').append('<li class="cdnLink">' + finalTag + deleteButton + '</li>');
     }
 
+    /**
+     * Removing a link fomr the list the user clicks on the delete button
+     */
+    $('body').on('click', '.deleteLink', function(event) {
+        console.log($(this));
+        $(this).closest('.cdnLink').remove();
+    });
+
     $('body').on('click', '.addButton', function(event) {
         var link = currentLibInfo.cdnLinkStructure;
         var type = $('.editRegion .languages input[name="language"]:checked').val();
