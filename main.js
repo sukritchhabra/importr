@@ -10,7 +10,7 @@ $(document).ready(function() {
             type: "GET",
             async: false,
             success: function (response) {
-                info = JSON.parse(response);
+                info = response;
                 console.log('recieved json:');
                 console.log(info);
             },
