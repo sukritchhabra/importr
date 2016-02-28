@@ -76,7 +76,8 @@ $(document).ready(function() {
             $('.cdnLinks').sortable({
                 cursor: "move",
                 containment: "parent",
-                axis: "y"
+                axis: "y",
+                cancel: ".deleteLink"
             });
         }
     }
