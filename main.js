@@ -73,6 +73,11 @@ $(document).ready(function() {
             html = html + '</div>';
 
             $('body').append(html);
+            $('.cdnLinks').sortable({
+                cursor: "move",
+                containment: "parent",
+                axis: "y"
+            });
         }
     }
 
@@ -119,7 +124,7 @@ $(document).ready(function() {
         var pattern = "{version}";
         var regEx = new RegExp(pattern, "g");
         var cdnLink = linkStructure.replace(regEx, version);
-        
+
         pattern = "{type}";
         regEx = new RegExp(pattern, "g");
         cdnLink = cdnLink.replace(regEx, type);
@@ -127,14 +132,14 @@ $(document).ready(function() {
         pattern = "{minifiedState}";
         regEx = new RegExp(pattern, "g");
         cdnLink = cdnLink.replace(regEx, ''); // Handle after adding minified radio buttons
-        
+
         var finalTag = '';
         if (type == 'css') {
             finalTag = finalTag + '&ltlink href="' + cdnLink + '" rel="stylesheet" type="text/css"&gt';
         } else {
             finalTag = finalTag + '&ltscript src="' + cdnLink + '"&gt&lt/script&gt';
         }
-        
+
         $('.importrLinks .cdnLinks').append('<li class="cdnLink">' + finalTag + '</li>');
     }
 

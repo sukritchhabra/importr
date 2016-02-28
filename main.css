@@ -164,4 +164,27 @@
     /* Import Links */
     .importrLinks {
         width: 40%;
+        height: 400px;
+        padding: 2em 0em;
+
+        box-shadow: 0 0 10px 1px #e2e2e2;
+
+        overflow: auto;
     }
+
+        .importrLinks .cdnLinks {
+            padding-left: 1.5em;
+        }
+
+            .importrLinks li.cdnLink {
+                margin: 1em;
+                padding: 0.5em;
+            }
+
+            .importrLinks li.cdnLink:nth-child(odd) {
+                background-color: #d4d4d4;
+            }
+
+            .importrLinks li.cdnLink:nth-child(even) {
+                background-color: #f3f3f3;
+            }
