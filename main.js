@@ -89,9 +89,10 @@ $(document).ready(function() {
 
     /**
      * Creates Radio buttons for all available types
-     * @param {[type]} availableLanguages [description]
+     * @param {[JSON]} availableLanguages [description]
      */
     function addLanguages(availableLanguages) {
+        $('.editRegion .languages').empty();
         var i = 0;
         $.each(availableLanguages, function(index, val) {
              if (val) {
@@ -127,7 +128,14 @@ $(document).ready(function() {
         regEx = new RegExp(pattern, "g");
         cdnLink = cdnLink.replace(regEx, ''); // Handle after adding minified radio buttons
         
-        $('.importrLinks .cdnLinks').append('<li class="cdnLink">' + cdnLink + '</li>');
+        var finalTag = '';
+        if (type == 'css') {
+            finalTag = finalTag + '&ltlink href="' + cdnLink + '" rel="stylesheet" type="text/css"&gt';
+        } else {
+            finalTag = finalTag + '&ltscript src="' + cdnLink + '"&gt&lt/script&gt';
+        }
+        
+        $('.importrLinks .cdnLinks').append('<li class="cdnLink">' + finalTag + '</li>');
     }
 
     $('body').on('click', '.addButton', function(event) {
