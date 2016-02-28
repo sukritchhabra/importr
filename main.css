@@ -153,12 +153,21 @@ a:hover {
         .addButton {
             border: none;
             border-radius: 3px;
-            
+
             color: white;
             font-weight: 900;
 
             background-color: #4CAF50;
             box-shadow: none;
+            opacity: 0.8;
+        }
+
+        .addButton:hover {
+            opacity: 1;
+        }
+
+        .addButton:focus {
+            outline: none;
         }
 
         .languages label {
@@ -191,19 +200,19 @@ a:hover {
 
             .importrLinks li.cdnLink {
                 position: relative;
-                
+
                 margin: 1em;
                 padding: 0.5em;
             }
 
             .importrLinks li.cdnLink:nth-child(odd) {
-                background-color: #d4d4d4;
+                background-color: #B3DBEF;
             }
 
             .importrLinks li.cdnLink:nth-child(even) {
-                background-color: #f3f3f3;
+                background-color: #D4F3B9;
             }
-                
+
                 /* Delete Button */
                 .importrLinks li.cdnLink .deleteLink {
                     display: none;
@@ -212,6 +221,8 @@ a:hover {
                     right: 0.5em;
 
                     color: #c62828;
+
+                    opacity: 0.5;
                 }
 
                 .importrLinks li.cdnLink:hover .deleteLink {
@@ -219,6 +230,8 @@ a:hover {
                 }
 
                 .importrLinks li.cdnLink:hover .deleteLink:hover {
-                    cursor: pointer;
                     transform: scale(1.2);
+                    
+                    cursor: pointer;
+                    opacity: 1;
                 }
