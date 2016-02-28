@@ -42,7 +42,7 @@ $(document).ready(function() {
             success: function (response) {
                 readme = response;
                 console.log('recieved readme:');
-                console.log(readme);
+                // console.log(readme);
             },
             error: function (errorReport) {
                 console.log('Error happened in AJAX Request!!');
@@ -51,6 +51,9 @@ $(document).ready(function() {
         return readme;
     }
 
+    /**
+     * Creates the Edit Region in the markup
+     */
     function createEditRegion() {
         if ($('.editRegion').length === 0) {
             var html = '';
@@ -70,6 +73,12 @@ $(document).ready(function() {
         }
     }
 
+    function addVersions(listOfVersions) {
+        for (var i = 0; i < listOfVersions.length; i++) {
+            $('.versionsDropdown').append('<option value="'+ listOfVersions[i] +'">'+ listOfVersions[i] +'</option>');
+        };
+    }
+
     $('body').on('search', function(event) {
         var searchedLibrary = event.searchString;
         console.log('searched: ' + searchedLibrary);
@@ -84,5 +93,32 @@ $(document).ready(function() {
         var readmeAsHTML = converter.makeHtml(libReadme);
         $('.readme').html(readmeAsHTML);
 
+        addVersions(libraryInfo.versions);
     });
-})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
