@@ -32,7 +32,7 @@
         "2.0.0",
         "1.4.0"
     ],
-    "types": {
+    "languages": {
         "css": true,
         "js": true
     },

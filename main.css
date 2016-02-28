@@ -130,6 +130,7 @@
     .options {
         width: 20%;
         height: 400px;
+        text-align: center;
     }
 
         .addButton {

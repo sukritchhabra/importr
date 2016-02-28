@@ -73,11 +73,37 @@ $(document).ready(function() {
         }
     }
 
+    /**
+     * Adds all available versions of the library to the dropdown list
+     * @param {[JSON]} listOfVersions [An array of all the available versions as strings]
+     */
     function addVersions(listOfVersions) {
+        $('.versionsDropdown').empty();
         for (var i = 0; i < listOfVersions.length; i++) {
             $('.versionsDropdown').append('<option value="'+ listOfVersions[i] +'">'+ listOfVersions[i] +'</option>');
         };
     }
+
+    /**
+     * Creates Radio buttons for all available types
+     * @param {[type]} availableLanguages [description]
+     */
+    function addLanguages(availableLanguages) {
+        var i = 0;
+        $.each(availableLanguages, function(index, val) {
+             if (val) {
+                 var html = '';
+                 html = html + '<label for="language"><input type="radio" name="language" value="' + index + '" ';
+                 if (i == 0) {
+                     html = html + 'checked>';
+                    i++;
+                 }
+                 html = html + '<span>' + index + '</span></label>';
+                 $('.editRegion .languages').append(html);
+             }
+        });
+    }
+
 
     $('body').on('search', function(event) {
         var searchedLibrary = event.searchString;
@@ -94,6 +120,7 @@ $(document).ready(function() {
         $('.readme').html(readmeAsHTML);
 
         addVersions(libraryInfo.versions);
+        addLanguages(libraryInfo.languages);
     });
 });
 
