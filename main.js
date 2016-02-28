@@ -4,6 +4,7 @@
 
 $(document).ready(function() {
     var editState = 0;
+    var currentLibInfo;
 
     /**
      * A function to get a libraries JSON file via AJAX
@@ -66,7 +67,9 @@ $(document).ready(function() {
             html = html + '            <select class="versionsDropdown" name="select-version"></select>';
             html = html + '        </div>';
             html = html + '    </div>';
-            html = html + '    <div class="importrLinks"></div>';
+            html = html + '    <div class="importrLinks">';
+            html = html + '        <ul class="cdnLinks"></ul>';
+            html = html + '    </div>';
             html = html + '</div>';
 
             $('body').append(html);
@@ -105,12 +108,42 @@ $(document).ready(function() {
         });
     }
 
+    /**
+     * Function adds CDN link to the link section on the right side.
+     * @param {[String]} linkStructure [Structure of the CDN Link as described in package.json]
+     * @param {[String]} type          [Type selected by user]
+     * @param {[String]} version       [version selected by user]
+     */
+    function addLink(linkStructure, type, version) {
+        var pattern = "{version}";
+        var regEx = new RegExp(pattern, "g");
+        var cdnLink = linkStructure.replace(regEx, version);
+        
+        pattern = "{type}";
+        regEx = new RegExp(pattern, "g");
+        cdnLink = cdnLink.replace(regEx, type);
+
+        pattern = "{minifiedState}";
+        regEx = new RegExp(pattern, "g");
+        cdnLink = cdnLink.replace(regEx, ''); // Handle after adding minified radio buttons
+        
+        $('.importrLinks .cdnLinks').append('<li class="cdnLink">' + cdnLink + '</li>');
+    }
+
+    $('body').on('click', '.addButton', function(event) {
+        var link = currentLibInfo.cdnLinkStructure;
+        var type = $('.editRegion .languages input[name="language"]:checked').val();
+        var ver = $('.editRegion .versionsDropdown').val();
+        addLink(link, type, ver);
+    });
+
 
     $('body').on('search', function(event) {
         var searchedLibrary = event.searchString;
         console.log('searched: ' + searchedLibrary);
 
         var libraryInfo = getLibraryInfo(searchedLibrary);
+        currentLibInfo = libraryInfo;
         var libReadme = getReadme(libraryInfo.readme);
 
         createEditRegion();

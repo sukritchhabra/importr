@@ -36,5 +36,5 @@
         "css": true,
         "js": true
     },
-    "cdnLinkStructure": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/{version}/{type}/bootstrap{mininfiedState}.{type}"
+    "cdnLinkStructure": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/{version}/{type}/bootstrap{minifiedState}.{type}"
 }
