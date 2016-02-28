@@ -105,8 +105,8 @@
 
 
 
-/* Creation Area */
-.creation-area {
+/* Edit Region */
+.editRegion {
     padding: 5em 5em;
 }
 
@@ -120,4 +120,13 @@
         box-shadow: 0 0 10px 1px #e2e2e2;
 
         overflow: auto;
+    }
+
+    /* Options */
+    .addButton {
+        border: none;
+        border-radius: 3px;
+
+        background-color: #4CAF50;
+        box-shadow: none;
     }

@@ -3,6 +3,8 @@
 /*global $, jQuery, alert*/
 
 $(document).ready(function() {
+    var editState = 0;
+
     /**
      * A function to get a libraries JSON file via AJAX
      * @param  {[String]} libraryName   [Name of the library, the information of which is needed]
@@ -49,12 +51,34 @@ $(document).ready(function() {
         return readme;
     }
 
+    function createEditRegion() {
+        if ($('.editRegion').length === 0) {
+            var html = '';
+            html = html + '<div class="row editRegion">';
+            html = html + '    <div class="col-md-4 readme"></div>';
+            html = html + '    <div class="col-md-2 col-md-offset-1 options">';
+            html = html + '        <button class="addButton"> >>> </button>';
+            html = html + '        <div class="languages"></div>';
+            html = html + '        <div class="versions">';
+            html = html + '            <select class="versionsDropdown" name="select-version"></select>';
+            html = html + '        </div>';
+            html = html + '    </div>';
+            html = html + '    <div class="col-md-4 col-md-offset-1 importrLinks"></div>';
+            html = html + '</div>';
+
+            $('body').append(html);
+        }
+    }
+
     $('body').on('search', function(event) {
         var searchedLibrary = event.searchString;
         console.log('searched: ' + searchedLibrary);
 
         var libraryInfo = getLibraryInfo(searchedLibrary);
         var libReadme = getReadme(libraryInfo.readme);
+
+        createEditRegion();
+        editState = 1;
 
         var converter = new showdown.Converter();
         var readmeAsHTML = converter.makeHtml(libReadme);
