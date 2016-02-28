@@ -190,6 +190,8 @@ a:hover {
         }
 
             .importrLinks li.cdnLink {
+                position: relative;
+                
                 margin: 1em;
                 padding: 0.5em;
             }
@@ -201,3 +203,11 @@ a:hover {
             .importrLinks li.cdnLink:nth-child(even) {
                 background-color: #f3f3f3;
             }
+
+                .importrLinks li.cdnLink .deleteLink {
+                    display: none;
+                }
+
+                .importrLinks li.cdnLink:hover .deleteLink {
+                    display: block;
+                }

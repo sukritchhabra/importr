@@ -133,14 +133,17 @@ $(document).ready(function() {
         regEx = new RegExp(pattern, "g");
         cdnLink = cdnLink.replace(regEx, ''); // Handle after adding minified radio buttons
 
-        var finalTag = '';
+        var finalTag = '<span class="tag">';
         if (type == 'css') {
             finalTag = finalTag + '&ltlink href="' + cdnLink + '" rel="stylesheet" type="text/css"&gt';
         } else {
             finalTag = finalTag + '&ltscript src="' + cdnLink + '"&gt&lt/script&gt';
         }
+        finalTag = finalTag + '</span>';
 
-        $('.importrLinks .cdnLinks').append('<li class="cdnLink">' + finalTag + '</li>');
+        var deleteButton = '<span class="deleteLink fa fa-times"></span>';
+
+        $('.importrLinks .cdnLinks').append('<li class="cdnLink">' + finalTag + deleteButton + '</li>');
     }
 
     $('body').on('click', '.addButton', function(event) {
