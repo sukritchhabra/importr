@@ -203,11 +203,22 @@ a:hover {
             .importrLinks li.cdnLink:nth-child(even) {
                 background-color: #f3f3f3;
             }
-
+                
+                /* Delete Button */
                 .importrLinks li.cdnLink .deleteLink {
                     display: none;
+                    position: absolute;
+                    top: 0.5em;
+                    right: 0.5em;
+
+                    color: #c62828;
                 }
 
                 .importrLinks li.cdnLink:hover .deleteLink {
-                    display: block;
+                    display: inline-block;
+                }
+
+                .importrLinks li.cdnLink:hover .deleteLink:hover {
+                    cursor: pointer;
+                    transform: scale(1.2);
                 }
