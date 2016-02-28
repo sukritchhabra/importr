@@ -55,15 +55,15 @@ $(document).ready(function() {
         if ($('.editRegion').length === 0) {
             var html = '';
             html = html + '<div class="row editRegion">';
-            html = html + '    <div class="col-md-4 readme"></div>';
-            html = html + '    <div class="col-md-2 col-md-offset-1 options">';
+            html = html + '    <div class="readme"></div>';
+            html = html + '    <div class="options">';
             html = html + '        <button class="addButton"> >>> </button>';
             html = html + '        <div class="languages"></div>';
             html = html + '        <div class="versions">';
             html = html + '            <select class="versionsDropdown" name="select-version"></select>';
             html = html + '        </div>';
             html = html + '    </div>';
-            html = html + '    <div class="col-md-4 col-md-offset-1 importrLinks"></div>';
+            html = html + '    <div class="importrLinks"></div>';
             html = html + '</div>';
 
             $('body').append(html);

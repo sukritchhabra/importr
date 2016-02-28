@@ -110,6 +110,10 @@
     padding: 5em 5em;
 }
 
+.editRegion > div {
+    float: left;
+}
+
     /* Readme */
     .readme {
         width: 40%;
@@ -123,10 +127,21 @@
     }
 
     /* Options */
-    .addButton {
-        border: none;
-        border-radius: 3px;
-
-        background-color: #4CAF50;
-        box-shadow: none;
+    .options {
+        width: 20%;
+        height: 400px;
     }
+
+        .addButton {
+            border: none;
+            border-radius: 3px;
+
+            background-color: #4CAF50;
+            box-shadow: none;
+        }
+
+        .versionsDropdown {
+            width: 50%;
+        }
+
+    /* Import Links */
