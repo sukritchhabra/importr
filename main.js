@@ -6,7 +6,7 @@ $(document).ready(function() {
     function getLibraryInfo(libraryName) {
         var info;
         $.ajax({
-            url: "/libraries/" + libraryName + "/package.json",
+            url: "libraries/" + libraryName + "/package.json",
             type: "GET",
             async: false,
             success: function (response) {
