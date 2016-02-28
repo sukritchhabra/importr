@@ -95,10 +95,11 @@ $(document).ready(function() {
                  var html = '';
                  html = html + '<label for="language"><input type="radio" name="language" value="' + index + '" ';
                  if (i == 0) {
-                     html = html + 'checked>';
+                     html = html + 'checked';
                     i++;
                  }
-                 html = html + '<span>' + index + '</span></label>';
+                 var textUppercase = index.toUpperCase();
+                 html = html + '><span>' + textUppercase + '</span></label>';
                  $('.editRegion .languages').append(html);
              }
         });

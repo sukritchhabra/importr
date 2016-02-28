@@ -131,14 +131,30 @@
         width: 20%;
         height: 400px;
         text-align: center;
+        padding: 10em 0;
+    }
+
+    .options > * {
+        margin-bottom: 1em;
     }
 
         .addButton {
             border: none;
             border-radius: 3px;
+            
+            color: white;
+            font-weight: 900;
 
             background-color: #4CAF50;
             box-shadow: none;
+        }
+
+        .languages label {
+            margin-right: 1em;
+        }
+
+        .languages label span{
+            margin-left: 0.5em;
         }
 
         .versionsDropdown {
