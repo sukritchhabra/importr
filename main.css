@@ -9,6 +9,18 @@
     height: 100%;
     width: 100%;
 }*/
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.title {
+    color: white;
+}
 
 .center {
     margin: 0 auto;
@@ -174,6 +186,7 @@
 
         .importrLinks .cdnLinks {
             padding-left: 1.5em;
+            list-style-type: decimal;
         }
 
             .importrLinks li.cdnLink {
