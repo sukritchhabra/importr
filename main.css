@@ -37,6 +37,8 @@
 
 /* Search Bar */
 .search-container {
+    position: relative;
+
     width: 40%;
     padding: 0.3em;
 
@@ -67,12 +69,12 @@
 }
 
 .results {
-    position: relative;
+    position: absolute;
     left: 0px;
     z-index: 999;
 
     display: none;
-    width: 100%;
+    width: 98%;
     padding-left: 0em;
 
     text-align: left;
