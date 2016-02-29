@@ -135,6 +135,10 @@ a:hover {
 
         box-shadow: 0 0 10px 1px #e2e2e2;
 
+        overflow: hidden;
+    }
+
+    .readme:hover {
         overflow: auto;
     }
 
@@ -190,6 +194,10 @@ a:hover {
 
         box-shadow: 0 0 10px 1px #e2e2e2;
 
+        overflow: hidden;
+    }
+
+    .importrLinks:hover {
         overflow: auto;
     }
 
