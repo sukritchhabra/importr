@@ -68,6 +68,7 @@ $(document).ready(function() {
             html = html + '        </div>';
             html = html + '    </div>';
             html = html + '    <div class="importrLinks">';
+            html = html + '        <span class="copyButton fa fa-clone"></span>';
             html = html + '        <ul class="cdnLinks"></ul>';
             html = html + '    </div>';
             html = html + '</div>';
