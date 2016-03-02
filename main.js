@@ -152,7 +152,7 @@ $(document).ready(function() {
 
         $('.importrLinks .cdnLinks').append('<li class="cdnLink">' + finalTag + deleteButton + '</li>');
         addedTags.push(tagForCopy);
-        console.log(addedTags);
+        // console.log(addedTags);
     }
 
     /**
@@ -163,6 +163,7 @@ $(document).ready(function() {
         var listElement = $(this).closest('.cdnLink');
         var indexOfListElement = $('.cdnLink').index(listElement);
         addedTags.splice(indexOfListElement, 1);
+        // console.log(addedTags);
         listElement.remove();
     });
 
