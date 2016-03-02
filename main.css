@@ -188,6 +188,8 @@ a:hover {
 
     /* Import Links */
     .importrLinks {
+        position: relative;
+
         width: 40%;
         height: 400px;
         padding: 2em 0em;
@@ -200,6 +202,22 @@ a:hover {
     .importrLinks:hover {
         overflow: auto;
     }
+
+        .importrLinks .copyButton {
+            position: absolute;
+            top: 0.5em;
+            right: 0.5em;
+
+            font-size: 1.2em;
+
+            color: black;
+            opacity: 0.3;
+        }
+
+        .importrLinks .copyButton:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
 
         .importrLinks .cdnLinks {
             padding-left: 1.5em;
@@ -240,7 +258,7 @@ a:hover {
 
                 .importrLinks li.cdnLink:hover .deleteLink:hover {
                     transform: scale(1.2);
-                    
+
                     cursor: pointer;
                     opacity: 1;
                 }
