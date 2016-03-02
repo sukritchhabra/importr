@@ -14,7 +14,12 @@ $(document).ready(function() {
     var selectedSearchResult = undefined;   // Final list element that is selected from the search results
     var selectedSearchString = "";          // The topic that is finally selected
 
-
+    /**
+     * A function that searches the tags of a library
+     * @param  {[String]} searchItem    [Search item user has entered]
+     * @param  {[JSON]} library         [Library we are looking in for the tags]
+     * @return {[Boolean]}              [Found in tags or not]
+     */
     function searchTags (searchItem, library) {
         var tags = library.tags;
         var numTags = tags.length;
