@@ -137,18 +137,21 @@ $(document).ready(function() {
         regEx = new RegExp(pattern, "g");
         cdnLink = cdnLink.replace(regEx, ''); // Handle after adding minified radio buttons
 
+        var tagForCopy = '';
         var finalTag = '<span class="tag">';
         if (type == 'css') {
             finalTag = finalTag + '&ltlink href="' + cdnLink + '" rel="stylesheet" type="text/css"&gt';
+            tagForCopy = tagForCopy + '<link href="' + cdnLink + '" rel="stylesheet" type="text/css">';
         } else {
             finalTag = finalTag + '&ltscript src="' + cdnLink + '"&gt&lt/script&gt';
+            tagForCopy = tagForCopy + '<script src="' + cdnLink + '"></script>';
         }
         finalTag = finalTag + '</span>';
 
         var deleteButton = '<span class="deleteLink fa fa-times"></span>';
 
         $('.importrLinks .cdnLinks').append('<li class="cdnLink">' + finalTag + deleteButton + '</li>');
-        addedTags.push(finalTag);
+        addedTags.push(tagForCopy);
         console.log(addedTags);
     }
 
