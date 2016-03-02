@@ -6,6 +6,8 @@ $(document).ready(function() {
     var editState = 0;
     var currentLibInfo;
 
+    var addedTags = [];
+
     /**
      * A function to get a libraries JSON file via AJAX
      * @param  {[String]} libraryName   [Name of the library, the information of which is needed]
@@ -146,6 +148,8 @@ $(document).ready(function() {
         var deleteButton = '<span class="deleteLink fa fa-times"></span>';
 
         $('.importrLinks .cdnLinks').append('<li class="cdnLink">' + finalTag + deleteButton + '</li>');
+        addedTags.push(finalTag);
+        console.log(addedTags);
     }
 
     /**
