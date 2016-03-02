@@ -22,7 +22,8 @@ $(document).ready(function() {
         var tagsContain = false;
 
         for (var i = 0; i < numTags; i++) {
-            if (tags[i].indexOf(search_lowercase) >= 0 || tags[i].indexOf(searchItem) >= 0) {
+            var tag_lowercase = tags[i].toLowerCase();
+            if (tag_lowercase.indexOf(search_lowercase) >= 0 || tags[i].indexOf(searchItem) >= 0) {
                 tagsContain = true;
                 break;
             }
