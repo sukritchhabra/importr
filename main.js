@@ -160,7 +160,10 @@ $(document).ready(function() {
      */
     $('body').on('click', '.deleteLink', function(event) {
         console.log($(this));
-        $(this).closest('.cdnLink').remove();
+        var listElement = $(this).closest('.cdnLink');
+        var indexOfListElement = $('.cdnLink').index(listElement);
+        addedTags.splice(indexOfListElement, 1);
+        listElement.remove();
     });
 
     $('body').on('click', '.addButton', function(event) {
