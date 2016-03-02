@@ -15,6 +15,22 @@ $(document).ready(function() {
     var selectedSearchString = "";          // The topic that is finally selected
 
 
+    function searchTags (searchItem, library) {
+        var tags = library.tags;
+        var numTags = tags.length;
+        var search_lowercase = searchItem.toLowerCase();
+        var tagsContain = false;
+
+        for (var i = 0; i < numTags; i++) {
+            if (tags[i].indexOf(search_lowercase) >= 0 || tags[i].indexOf(searchItem) >= 0) {
+                tagsContain = true;
+                break;
+            }
+        };
+
+        return tagsContain;
+    }
+
     $('body').on('keyup', '.searchBar', $.debounce(function(event) {
         var keyPressed = event.keyCode;
         if (keyPressed != 37 && keyPressed != 38 && keyPressed != 39 && keyPressed != 40 && keyPressed != 13) {
@@ -39,7 +55,8 @@ $(document).ready(function() {
                     var temp = searchResult_JSON[i].title;
                     temp = searchResult_JSON[i].title.toLowerCase();
                     var tempSearchText = searchText.toLowerCase();
-                    if(temp.indexOf(tempSearchText) >= 0 || searchResult_JSON[i].title.indexOf(tempSearchText) >= 0) {
+                    var inTags = searchTags(searchText, searchResult_JSON[i]);
+                    if(temp.indexOf(tempSearchText) >= 0 || searchResult_JSON[i].title.indexOf(tempSearchText) >= 0 || inTags) {
                         $('.results').append('<li>' + searchResult_JSON[i].title + '</li>');
                     }
                 }
