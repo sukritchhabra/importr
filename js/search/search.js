@@ -71,7 +71,7 @@ $(document).ready(function() {
                             appendTag = appendTag + '<span class="resultFromTag">' + inTags.tag + '</span>';
                         }
                         appendTag = appendTag + '</li>';
-                        $('.results').append('<li>' + searchResult_JSON[i].title + '</li>');
+                        $('.results').append(appendTag);
                     }
                 }
             }
