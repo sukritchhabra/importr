@@ -24,17 +24,18 @@ $(document).ready(function() {
         var tags = library.tags;
         var numTags = tags.length;
         var search_lowercase = searchItem.toLowerCase();
-        var tagsContain = false;
+        var tagResult = {};
 
         for (var i = 0; i < numTags; i++) {
             var tag_lowercase = tags[i].toLowerCase();
             if (tag_lowercase.indexOf(search_lowercase) >= 0 || tags[i].indexOf(searchItem) >= 0) {
-                tagsContain = true;
+                tagResult.found = true;
+                tagResult.tag = tags[i];
                 break;
             }
         };
 
-        return tagsContain;
+        return tagResult;
     }
 
     $('body').on('keyup', '.searchBar', $.debounce(function(event) {
@@ -62,7 +63,14 @@ $(document).ready(function() {
                     temp = searchResult_JSON[i].title.toLowerCase();
                     var tempSearchText = searchText.toLowerCase();
                     var inTags = searchTags(searchText, searchResult_JSON[i]);
-                    if(temp.indexOf(tempSearchText) >= 0 || searchResult_JSON[i].title.indexOf(tempSearchText) >= 0 || inTags) {
+                    if(temp.indexOf(tempSearchText) >= 0 || searchResult_JSON[i].title.indexOf(tempSearchText) >= 0 || inTags.found) {
+                        var appendTag = '';
+                        appendTag = appendTag + '<li>';
+                        appendTag = appendTag + searchResult_JSON[i].title;
+                        if ( inTags.found ) {
+                            appendTag = appendTag + '<span class="resultFromTag">' + inTags.tag + '</span>';
+                        }
+                        appendTag = appendTag + '</li>';
                         $('.results').append('<li>' + searchResult_JSON[i].title + '</li>');
                     }
                 }

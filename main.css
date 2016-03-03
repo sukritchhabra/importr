@@ -115,6 +115,13 @@ a:hover {
     background-color: #f2f2f2;
 }
 
+.results .resultFromTag {
+    float: right;
+
+    font-size: 0.5em;
+    opacity: 0.5;
+}
+
 
 
 /* Edit Region */
