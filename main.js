@@ -165,7 +165,7 @@ $(document).ready(function() {
         addedTags.splice(indexOfListElement, 1);
         // console.log(addedTags);
         listElement.remove();
-        $('.importrLinks').hide().show(0);
+        // $('.importrLinks').hide().show(0);
     });
 
     $('body').on('click', '.addButton', function(event) {
