@@ -66,7 +66,9 @@ $(document).ready(function() {
                     if(temp.indexOf(tempSearchText) >= 0 || searchResult_JSON[i].title.indexOf(tempSearchText) >= 0 || inTags.found) {
                         var appendTag = '';
                         appendTag = appendTag + '<li>';
+                        appendTag = appendTag + '<span class="library">';
                         appendTag = appendTag + searchResult_JSON[i].title;
+                        appendTag = appendTag + '</span>';
                         if ( inTags.found ) {
                             appendTag = appendTag + '<span class="resultFromTag">' + inTags.tag + '</span>';
                         }
@@ -115,7 +117,7 @@ $(document).ready(function() {
                 }
             }
         } else if (keyPressed == 13) {
-            selectedSearchString = $('.results .selected').text();
+            selectedSearchString = $('.results .selected .library').text();
             $('.searchBar').val(selectedSearchString);
             $('.results').removeClass('active');
             $('.results').empty();
@@ -132,7 +134,7 @@ $(document).ready(function() {
     });
 
     $('body').on('click', '.results li', function(event) {
-        selectedSearchString = $(this).text();
+        selectedSearchString = $(this).find('.library').text();
         $('.searchBar').val(selectedSearchString);
         $('.results').removeClass('active');
         $('.results').empty();
