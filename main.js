@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
     var clipboard;
-    var editState = 0;
+    var editState = 0;  // 1 implies editRegion is displayed
     var currentLibInfo;
 
     var sortStartIndex = 0;
@@ -35,6 +35,7 @@ $(document).ready(function() {
         return info;
     }
 
+
     /**
      * A function to get the README of a library
      * @param  {[String]} readmeLink    [ Link to the README of the library ]
@@ -57,6 +58,7 @@ $(document).ready(function() {
         });
         return readme;
     }
+
 
     /**
      * Creates the Edit Region in the markup
@@ -99,6 +101,23 @@ $(document).ready(function() {
         }
     }
 
+
+    /**
+     * Function to sort tags array when user sorts list
+     * @param  {[int]} from [Taken from index]
+     * @param  {[int]} to   [Put at index]
+     */
+    Array.prototype.move = function (from, to) {
+        if (to >= this.length) {
+            var k = to - this.length;
+            while ((k--) + 1) {
+                this.push(undefined);
+            }
+        }
+        this.splice(to, 0, this.splice(from, 1)[0]);
+        return this; // for testing purposes
+    };
+
     /**
      * Function to setup Clipboard
      */
@@ -119,22 +138,6 @@ $(document).ready(function() {
         });
     }
 
-    /**
-     * Function to sort tags array when user sorts list
-     * @param  {[int]} from [Taken from index]
-     * @param  {[int]} to   [Put at index]
-     */
-    Array.prototype.move = function (from, to) {
-        if (to >= this.length) {
-            var k = to - this.length;
-            while ((k--) + 1) {
-                this.push(undefined);
-            }
-        }
-        this.splice(to, 0, this.splice(from, 1)[0]);
-        return this; // for testing purposes
-    };
-
 
     /**
      * Function to execute when copy is successfull
@@ -149,6 +152,7 @@ $(document).ready(function() {
         $('.copySuccess').fadeOut('400');
     }
 
+
     /**
      * Get all tags as one string
      * @return {[String]} [All tags combined]
@@ -161,6 +165,7 @@ $(document).ready(function() {
         return copyText;
     }
 
+
     /**
      * Adds all available versions of the library to the dropdown list
      * @param {[JSON]} listOfVersions [An array of all the available versions as strings]
@@ -171,6 +176,7 @@ $(document).ready(function() {
             $('.versionsDropdown').append('<option value="'+ listOfVersions[i] +'">'+ listOfVersions[i] +'</option>');
         }
     }
+
 
     /**
      * Creates Radio buttons for all available types
@@ -193,6 +199,7 @@ $(document).ready(function() {
              }
         });
     }
+
 
     /**
      * Function adds CDN link to the link section on the right side.
@@ -231,6 +238,7 @@ $(document).ready(function() {
         // console.log(addedTags);
     }
 
+
     /**
      * Removing a link fomr the list the user clicks on the delete button
      */
@@ -243,6 +251,7 @@ $(document).ready(function() {
         listElement.remove();
         // $('.importrLinks').hide().show(0);
     });
+
 
     $('body').on('click', '.addButton', function(event) {
         var link = currentLibInfo.cdnLinkStructure;
