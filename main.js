@@ -7,6 +7,9 @@ $(document).ready(function() {
     var editState = 0;
     var currentLibInfo;
 
+    var sortStartIndex = 0;
+    var sortStopIndex = 0;
+
     var addedTags = [];
 
     /**
@@ -82,7 +85,14 @@ $(document).ready(function() {
                 cursor: "move",
                 containment: "parent",
                 axis: "y",
-                cancel: ".deleteLink"
+                cancel: ".deleteLink",
+                start: function(event, ui) {
+                    sortStartIndex = ui.item.index();
+                },
+                stop: function(event, ui) {
+                    sortStopIndex = ui.item.index();
+                    addedTags.move(sortStartIndex, sortStopIndex);
+                }
             });
 
             setUpClipboard();
@@ -108,6 +118,22 @@ $(document).ready(function() {
             console.error('Trigger:', e.trigger);
         });
     }
+
+    /**
+     * Function to sort tags array when user sorts list
+     * @param  {[int]} from [Taken from index]
+     * @param  {[int]} to   [Put at index]
+     */
+    Array.prototype.move = function (from, to) {
+        if (to >= this.length) {
+            var k = to - this.length;
+            while ((k--) + 1) {
+                this.push(undefined);
+            }
+        }
+        this.splice(to, 0, this.splice(from, 1)[0]);
+        return this; // for testing purposes
+    };
 
 
     /**
