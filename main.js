@@ -83,7 +83,7 @@ $(document).ready(function() {
                 cancel: ".deleteLink"
             });
 
-            new Clipboard('.btn', {
+            new Clipboard('.copyButton', {
                 text: function(trigger) {
                     return getAllTags();
                 }
