@@ -3,6 +3,7 @@
 /*global $, jQuery, alert*/
 
 $(document).ready(function() {
+    var clipboard;
     var editState = 0;
     var currentLibInfo;
 
@@ -68,6 +69,7 @@ $(document).ready(function() {
             html = html + '        <div class="versions">';
             html = html + '            <select class="versionsDropdown" name="select-version"></select>';
             html = html + '        </div>';
+            html = html + '        <span class="copySuccess">Copied!</span>';
             html = html + '    </div>';
             html = html + '    <div class="importrLinks">';
             html = html + '        <span class="copyButton fa fa-files-o"></span>';
@@ -83,12 +85,42 @@ $(document).ready(function() {
                 cancel: ".deleteLink"
             });
 
-            new Clipboard('.copyButton', {
-                text: function(trigger) {
-                    return getAllTags();
-                }
-            });
+            setUpClipboard();
         }
+    }
+
+    /**
+     * Function to setup Clipboard
+     */
+    function setUpClipboard() {
+        clipboard = new Clipboard('.copyButton', {
+            text: function(trigger) {
+                return getAllTags();
+            }
+        });
+
+        clipboard.on('success', function(e) {
+            successfullCopy(e);
+        });
+
+        clipboard.on('error', function(e) {
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
+        });
+    }
+
+
+    /**
+     * Function to execute when copy is successfull
+     */
+    function successfullCopy(event) {
+        // console.info('Action:', event.action);
+        // console.info('Text:', event.text);
+        // console.info('Trigger:', event.trigger);
+
+        // event.clearSelection();
+        $('.copySuccess').fadeIn('200');
+        $('.copySuccess').fadeOut('400');
     }
 
     /**

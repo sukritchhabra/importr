@@ -168,7 +168,7 @@ a:hover {
             color: white;
             font-weight: 900;
 
-            background-color: #4CAF50;
+            background-color: #2196F3;
             box-shadow: none;
             opacity: 0.8;
         }
@@ -191,6 +191,17 @@ a:hover {
 
         .versionsDropdown {
             width: 50%;
+        }
+
+        .copySuccess {
+            display: none;
+
+            padding: 0.2em 0.4em;
+            border-radius: 5px;
+
+            background-color: #4CAF50;
+
+            color: white;
         }
 
     /* Import Links */
