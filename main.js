@@ -82,6 +82,12 @@ $(document).ready(function() {
                 axis: "y",
                 cancel: ".deleteLink"
             });
+
+            new Clipboard('.btn', {
+                text: function(trigger) {
+                    return getAllTags();
+                }
+            });
         }
     }
 
