@@ -86,6 +86,18 @@ $(document).ready(function() {
     }
 
     /**
+     * Get all tags as one string
+     * @return {[String]} [All tags combined]
+     */
+    function getAllTags() {
+        var copyText = '';
+        for (var i = 0; i < addedTags.length; i++) {
+            copyText = copyText + addedTags[i] + '\n';
+        }
+        return copyText;
+    }
+
+    /**
      * Adds all available versions of the library to the dropdown list
      * @param {[JSON]} listOfVersions [An array of all the available versions as strings]
      */
@@ -93,7 +105,7 @@ $(document).ready(function() {
         $('.versionsDropdown').empty();
         for (var i = 0; i < listOfVersions.length; i++) {
             $('.versionsDropdown').append('<option value="'+ listOfVersions[i] +'">'+ listOfVersions[i] +'</option>');
-        };
+        }
     }
 
     /**
