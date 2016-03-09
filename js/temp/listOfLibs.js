@@ -33,5 +33,16 @@ var listOfLibs = [
             "Effects",
             "Themes"
         ]
+    },
+
+    {
+        "title": "D3",
+        "tags": [
+            "Javascript",
+            "UI",
+            "Charts",
+            "Graphs",
+            "Visualization"
+        ]
     }
 ];
