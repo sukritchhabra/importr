@@ -25,3 +25,6 @@ Importr is a tool that allows users to search and create a combination of librar
     - These are all the important properties and are important for creating the webpages.
         - `Readme:` Covert the raw Readme of your library to a `rawgit` link
         - `cdnLinkStructure:` You can choose any CDN you want to submit, but I suggest using `CDNJS`
+    - To add your library to the search, add your library to the file `libraries/package.json`. Follow the structure of the JSON and add the tags too.
+    - Send in your Pull Request
+    - That's it, that's all you have to do! As soon as the PR is merged your library should be available to users on the website!
