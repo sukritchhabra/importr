@@ -123,6 +123,35 @@ a:hover {
 }
 
 
+/* FAQ */
+.faq {
+    margin-top: 7em;
+}
+
+    .faq .row {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+        .faq .row .thumbnail {
+            padding: 1em 4em;
+            border: none;
+
+            text-align: center;
+        }
+
+        .thumbnail .content-container {
+            padding: 3em;
+            border-radius: 6px;
+
+            background-color: #e2e2e2;
+        }
+
+        .faq .fa {
+            font-size: 3em;
+        }
+
+
 
 /* Edit Region */
 .editRegion {
@@ -280,3 +309,13 @@ a:hover {
                     cursor: pointer;
                     opacity: 1;
                 }
+
+/* Footer */
+.footer .container {
+    text-align: center;
+    font-size: 0.7em
+}
+
+.footer .container .fa {
+    margin: 0 0.3em;
+}

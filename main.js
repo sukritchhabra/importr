@@ -65,6 +65,8 @@ $(document).ready(function() {
      */
     function createEditRegion() {
         if ($('.editRegion').length === 0) {
+            if ( $('.faq').length === 1 ) { $('.faq').remove(); }
+
             var html = '';
             html = html + '<div class="row editRegion">';
             html = html + '    <div class="readme"></div>';
