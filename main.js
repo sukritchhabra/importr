@@ -267,19 +267,24 @@ $(document).ready(function() {
         var searchedLibrary = event.searchString;
         console.log('searched: ' + searchedLibrary);
 
-        var libraryInfo = getLibraryInfo(searchedLibrary);
-        currentLibInfo = libraryInfo;
-        var libReadme = getReadme(libraryInfo.readme);
+        if (searchedLibrary == "") {
+            console.error("Searched For an EMPTY String!");
+        } else {
+            var libraryInfo = getLibraryInfo(searchedLibrary);
+            currentLibInfo = libraryInfo;
+            var libReadme = getReadme(libraryInfo.readme);
 
-        createEditRegion();
-        editState = 1;
+            createEditRegion();
+            editState = 1;
 
-        var converter = new showdown.Converter();
-        var readmeAsHTML = converter.makeHtml(libReadme);
-        $('.readme').html(readmeAsHTML);
+            var converter = new showdown.Converter();
+            var readmeAsHTML = converter.makeHtml(libReadme);
+            $('.readme').html(readmeAsHTML);
 
-        addVersions(libraryInfo.versions);
-        addLanguages(libraryInfo.languages);
+            addVersions(libraryInfo.versions);
+            addLanguages(libraryInfo.languages);
+        }
+
     });
 
     $('body').on('click', '.link', function(event) {
