@@ -21,5 +21,17 @@ var listOfLibs = [
         "tags": [
             "Javascript"
         ]
+    },
+
+    {
+        "title": "jquery-ui",
+        "tags": [
+            "Javascript",
+            "UI",
+            "Widget",
+            "Interaction",
+            "Effects",
+            "Themes"
+        ]
     }
 ];
