@@ -147,6 +147,10 @@ a:hover {
             background-color: #e2e2e2;
         }
 
+        .thumbnail .content-container:hover {
+            cursor: pointer;
+        }
+
         .faq .fa {
             font-size: 3em;
         }

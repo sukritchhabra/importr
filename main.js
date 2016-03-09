@@ -281,6 +281,12 @@ $(document).ready(function() {
         addVersions(libraryInfo.versions);
         addLanguages(libraryInfo.languages);
     });
+
+    $('body').on('click', '.link', function(event) {
+        if ($(this).data('href') != "") {
+            window.location.href = $(this).data('href');
+        }
+    });
 });
 
 
