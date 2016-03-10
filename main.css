@@ -160,6 +160,8 @@ a:hover {
 /* Edit Region */
 .editRegion {
     padding: 5em 5em;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .editRegion > div {
