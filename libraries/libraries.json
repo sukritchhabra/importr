@@ -3,6 +3,7 @@
         "title": "jQuery",
         "tags": [
             "Javascript",
+            "js",
             "Cross Browser"
         ]
     },
@@ -27,6 +28,7 @@
         "title": "jquery-ui",
         "tags": [
             "Javascript",
+            "js",
             "UI",
             "Widget",
             "Interaction",
@@ -39,10 +41,22 @@
         "title": "D3",
         "tags": [
             "Javascript",
+            "js",
             "UI",
             "Charts",
             "Graphs",
             "Visualization"
+        ]
+    },
+
+    {
+        "title": "FullPage",
+        "tags": [
+            "Javascript",
+            "js",
+            "Page",
+            "UI",
+            "Scroll"
         ]
     }
 ]
