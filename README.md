@@ -20,11 +20,11 @@ Importr is a tool that allows users to search and create a combination of librar
 - If you want to add a library, you'll have to do the following:
     - Create a folder for you library in the `libraries` folder.
     - Name your folder (library) appropriately as that is what'll show up in the search.
-    - Inside the folder for your library, create a file called `package.json`
+    - Inside the folder for your library, create a file called `lib.json`
     - Take a look at sample package.json file for Bootstrap here: https://github.com/sukritchhabra/importr/blob/dev/libraries/Bootstrap/package.json
     - These are all the important properties and are important for creating the webpages.
         - `Readme:` Covert the raw Readme of your library to a `rawgit` link
         - `cdnLinkStructure:` You can choose any CDN you want to submit, but I suggest using `CDNJS`
-    - To add your library to the search, add your library to the file `libraries/package.json`. Follow the structure of the JSON and add the tags too.
+    - To add your library to the search, add your library to the file `libraries/libraries.json`. Follow the structure of the JSON and add the tags too.
     - Send in your Pull Request
     - That's it, that's all you have to do! As soon as the PR is merged your library should be available to users on the website!

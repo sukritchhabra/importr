@@ -1,48 +1,15 @@
-var listOfLibs = [
-    {
-        "title": "jQuery",
-        "tags": [
-            "Javascript",
-            "Cross Browser"
-        ]
-    },
+var listOfLibs;
 
-    {
-        "title": "Bootstrap",
-        "tags": [
-            "Design",
-            "UI",
-            "Responsive"
-        ]
+$.ajax({
+    url: "libraries/libraries.json",
+    type: "GET",
+    async: false,
+    success: function (response) {
+        listOfLibs = response;
+        console.log('\nRecieved Libraries');
+        console.log(listOfLibs);
     },
-
-    {
-        "title": "Ember-js",
-        "tags": [
-            "Javascript"
-        ]
-    },
-
-    {
-        "title": "jquery-ui",
-        "tags": [
-            "Javascript",
-            "UI",
-            "Widget",
-            "Interaction",
-            "Effects",
-            "Themes"
-        ]
-    },
-
-    {
-        "title": "D3",
-        "tags": [
-            "Javascript",
-            "UI",
-            "Charts",
-            "Graphs",
-            "Visualization"
-        ]
+    error: function (errorReport) {
+        console.log('Error happened in AJAX Request!!');
     }
-];
+});
