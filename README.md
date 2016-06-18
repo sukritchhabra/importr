@@ -33,4 +33,4 @@ Importr is a tool that allows users to search and create a combination of librar
 * Sukrit Chhabra - sukrit.chhabra@gmail.com
 
 ## Misc
-* Drexel UI Blog: https://drexelui.wordpress.com/#post-464
+* Drexel UI Blog: https://drexelui.wordpress.com/2016/03/14/importr-a-faster-way-for-importing-libraries/
